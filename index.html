@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="public/cloud.svg" />
+    <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather</title>
+  </head>
+  <body class="center">
+    <header class="center">
+      <div id="navbar" class="center">
+          <div id="navIconBox">
+              <img src="public/cloud.svg" alt="" id="navIcon">
+          </div>
+          <p id="currentLocation">Mattu</p>
+      </div>
+      <div id="currentForecast" class="center">
+          <h2 id="currentTemperature">30' C</h2>
+          <div id="currentForecastDetail">
+              <p id="forecastName"></p>
+              <div id="forecastMaxMinTemperature"><img src="public/assets/down.png" id="maxTemp"><span id="minTempText">22</span><img src="public/assets/Union.png" id="maxTemp"><span id="maxTempText">22</span></div>
+          </div>
+      </div>
+  </header>
+  <main id="main" class="center">
+      <div id="current" class="center">
+          <img id="currentImage" src="public/assets/thunder.svg" alt="sunny">
+      </div>
+      <section id="hourly" class="center">
+          <h2 id="hourlyTitle">Hourly forecast</h2>
+          <div id="hourlyUpdateBox" class="center">
+             <!-- code injected by renderHourlyUpdate -->
+          </div>
+      </section>
+      <section id="daily" class="center">
+          <h2 id="dailyTitle">Daily forecast</h2>
+          <div class="center" id="maxMinHeading">
+              <img src="public/assets/down.png" alt="">
+              <img src="public/assets/Union.png" alt="">
+          </div>
+          <div id="dailyForecastBox" class="center">
+              <!-- code inject throught renderDailyForecast -->
+          </div>
+      </section>
+  </main>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
