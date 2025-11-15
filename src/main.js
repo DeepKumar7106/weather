@@ -121,50 +121,5 @@ function passValueToRender(data) {
 }
 
 
-async function getLocationFromCoords(lat, lon) {
-    const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
-  
-    const res = await fetch(url);
-    const data = await res.json();
-  
-    return data.display_name; // full address
-  }
-  
-  // Example:
-  getLocationFromCoords(13.271030, 74.748661)
-    .then(address => console.log(address))
-    .catch(err => console.error(err));
-  
+//experiment section
 
-
-
-function getAccurateCoords() {
-    if (!navigator.geolocation) {
-        alert("Geolocation is not supported by your browser");
-        return;
-    }
-    
-    navigator.geolocation.getCurrentPosition(success, error, {
-        enableHighAccuracy: true,  // <— this improves accuracy!
-        timeout: 10000,            // 10 seconds
-        maximumAge: 0              // force fresh location
-    });
-    
-    function success(position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-    
-        console.log("Latitude:", lat);
-        console.log("Longitude:", lon);
-        getLocationFromCoords(lat, lon)
-        .then(address => console.log(`Chrome :${address}`))
-        .catch(err => console.error(err));
-    }
-    
-    function error(err) {
-        console.warn("ERROR(" + err.code + "): " + err.message);
-    }
-    }
-    
-    getAccurateCoords();
-      
